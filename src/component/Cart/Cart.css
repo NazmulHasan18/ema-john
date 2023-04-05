@@ -1,0 +1,16 @@
+.cart-container {
+   height: 100vw;
+   background: rgba(255, 153, 0, 0.3);
+   position: sticky;
+   top: 80px;
+   padding: 10px;
+}
+.cart-container h2 {
+   text-align: center;
+}
+.btn-clear {
+   background: #ff3030;
+   border-radius: 4px;
+   width: 100%;
+   color: white;
+}

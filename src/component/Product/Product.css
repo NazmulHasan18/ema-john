@@ -28,6 +28,13 @@ p {
    position: absolute;
    bottom: 0;
 }
+/* .product-info h3 {
+   padding: 0;
+} */
 .btn-add-cart:hover {
    background-color: orange;
 }
+/* .ratings-stock {
+   display: flex;
+   justify-content: space-between;
+} */

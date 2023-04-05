@@ -7,5 +7,11 @@
    grid-template-columns: repeat(3, 1fr);
    /* align-items: center; */
    gap: 45px;
-   margin: 100px;
+   margin: 50px;
 }
+/* .cart-container {
+   height: 100vw;
+   background: rgba(255, 153, 0, 0.3);
+   position: sticky;
+   top: 80px;
+} */
