@@ -1,0 +1,11 @@
+.order {
+   width: 1166px;
+   margin: 50px auto;
+   display: flex;
+   justify-content: space-between;
+}
+.order-container {
+}
+.review-cart-container .cart-container {
+   border-radius: 8px;
+}

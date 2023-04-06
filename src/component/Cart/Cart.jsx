@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { deleteShoppingCart } from "../../utilities/fakedb";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+
 import "./Cart.css";
 
 const Cart = ({ cart, handelClear }) => {
@@ -38,7 +41,7 @@ const Cart = ({ cart, handelClear }) => {
             }}
             className="btn-clear"
          >
-            Clear Cart
+            Clear Cart <FontAwesomeIcon icon={faTrashCan} />
          </button>
       </div>
    );

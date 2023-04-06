@@ -1,6 +1,8 @@
 .shop-container {
    display: grid;
    grid-template-columns: 4fr 1fr;
+   height: 100%;
+   /* position: absolute; */
 }
 .product-container {
    display: grid;
@@ -15,3 +17,8 @@
    position: sticky;
    top: 80px;
 } */
+.shop-cart .cart-container {
+   /* background-color: blue; */
+   position: sticky;
+   top: 80px;
+}

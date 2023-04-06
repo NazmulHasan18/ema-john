@@ -56,7 +56,8 @@ const Products = () => {
                <Product product={product} key={product.id} handelCart={handelCart}></Product>
             ))}
          </div>
-         <div>
+
+         <div className="shop-cart">
             <Cart cart={cart} handelClear={handelClear}></Cart>
          </div>
       </div>
