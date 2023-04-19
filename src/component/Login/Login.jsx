@@ -1,16 +1,20 @@
 import React, { useContext, useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import google from "../../images/google.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { authContext } from "../Provider/AuthProvider";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
-   const { emailPassLogin, setUser, user } = useContext(authContext);
+   const { emailPassLogin, setUser, user, googleSignIn } = useContext(authContext);
    const [passShow, setPassShow] = useState(false);
    const [err, setErr] = useState("");
    const [success, setSuccess] = useState("");
+   const navigate = useNavigate();
+   const location = useLocation();
+   // console.log(location.state?.from?.pathname || "/");
 
    const handelToggle = (e) => {
       e.preventDefault();
@@ -30,11 +34,29 @@ const Login = () => {
             const user = userCredential.user;
             setUser(user);
             setSuccess("User Login Successful");
+            navigate(location.state?.from?.pathname || "/", { replace: true });
          })
          .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             setErr(errorMessage);
+         });
+   };
+   const handelGoogleSingIn = () => {
+      setErr("");
+      setSuccess("");
+      googleSignIn()
+         .then((result) => {
+            const user = result.user;
+            console.log(user);
+            setSuccess("user Login successful");
+            navigate(location.state?.from?.pathname || "/", { replace: true });
+         })
+         .catch((error) => {
+            const errorMessage = error.message;
+            setErr(errorMessage);
+
+            console.log(error);
          });
    };
 
@@ -76,7 +98,7 @@ const Login = () => {
          <p className="btm-line">
             <span>or</span>
          </p>
-         <button className="btn-google">
+         <button className="btn-google" onClick={handelGoogleSingIn}>
             <img src={google} alt="" />
             <p>Continue With Google</p>
          </button>
