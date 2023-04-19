@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 import "./Cart.css";
+import { Link } from "react-router-dom";
 
-const Cart = ({ cart, handelClear }) => {
+const Cart = ({ cart, handelClear, children }) => {
    //    const { price, shipping } = cart;
    //    console.log(cart);
    //    let [item, setItem] = useState(0);
@@ -43,6 +44,7 @@ const Cart = ({ cart, handelClear }) => {
          >
             Clear Cart <FontAwesomeIcon icon={faTrashCan} />
          </button>
+         {children}
       </div>
    );
 };
